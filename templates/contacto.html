@@ -4,46 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holis</title>
-    <link rel="stylesheet" href="{{ url_for('static'. filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/boostrap.main.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h3 id="hEncabezado">Registro de Mascotas</h3>
-        <div class="row">
-            <div class="col col-md-6 col-md-6 col-md-6">              
-                <div class="card">
-                <div class="card-header bg-success text-white">Información del cliente</div>
-                    <label for="">Nombres:</label>
-                    <input type="text" class="form-control" placeholder="Escribe tu nombre" id="txtNombres">
-                    <label for="">Email:</label>
-                    <input type="text" class="form-control" placeholder="Escribe tu email" id="txtEmail">
-                    <label for="">N°.de telefono:</label>
-                    <input type="text" class="form-control" placeholder="Escribe tu numero de telefono" id="txtTelefono">
-                    <label for="">Direccion:</label>
-                    <input type="text" class="form-control" placeholder="Escribe tu direccion" id="txtDireccion">
-                </div>
-            </div>
-            <div class="col col-md-6 col-md-6 col-md-6">               
-                <div class="card">
-                    <div class="card-header bg-success text-white">Información de la mascota</div>
-                    <label for="">Nombre de mascota:</label>
-                    <input type="text" class="form-control" placeholder="Escribe el nombre de tu mascota" id="txtNombreMascota">
-                    <label for="">Tipo de mascota:</label>
-                    <input type="text" class="form-control" placeholder="Escribe tu tipo de mascota" id="txtTipoMascota">
-                    <label for="">Raza:</label>
-                    <input type="text" class="form-control" placeholder="Escribe la raza" id="txtRaza">
-                    <label for="">Edad:</label>
-                    <input type="text" class="form-control" placeholder="Escribe su edad" id="txtEdad">
-                </div>
-            </div>
-        </div>
-        <br>
-        <button type="button" class="btn bg-success text-white" id="btnGuardar">Guardar</button>
-    </div>
+    <div class="container mt-4">
+        <h3>Registro de Mascota</h3>
 
-    <script src="{{ url_for('static'. filename='js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static'. filename='js/popper.min.js') }}"></script>
-    <script src="{{ url_for('static'. filename='js/bootstrap.bundle.min.js') }}"></script>
+        <div class="row">
+            <!-- columna de la mascota -->
+            <div class="col col-md-6">
+                <!-- Formulario -->
+                <form action="{{ url_for('guardarMascota') }}" method="post">
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">Información de la mascota</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="txtNombreMascota">Nombre de la mascota:</label>
+                                <input type="text" class="form-control" placeholder="Escriba el nombre de sus mascota" name="txtNombreMascota" id="txtNombreMascota">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtTipoMascota">Tipo de Mascota:</label>
+                                <input type="text" class="form-control" placeholder="perro, gato doméstico, conejo doméstico, Hámster, etc" name="txtTipoMascota" id="txtTipoMascota">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtRaza">Raza:</label>
+                                <input type="text" class="form-control" placeholder="Doberman, Caniche, San Bernardo, etc" name="txtRaza" id="txtRaza">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEdad">Edad:</label>
+                                <input type="number" class="form-control" placeholder="Edad de su mascota" name="txtEdad" id="txtEdad">
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" name="btnGuardar" id="btnGuardar">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!--  -->
+
+                </div>
+                <!--  -->
+            </div>
+            
+            <div class="row mt-4 d-none" id="rowAlerta">
+                <div class="col col-md-12">
+                    <div class="alert alert-success">
+                        <strong>Registro Exitoso!</strong>
+                         <div class="row" id="mostrarAlerta"></div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.main.js')}}"></script>
     
 </body>
 </html>
