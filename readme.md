@@ -38,3 +38,7 @@ pip freeze > paquetes.txt
 #### Mostrar las ramas, incluida la que esta en uso 
 ```git branch
 ```
+#### instalar el driver de la base de datos Postgresql
+```
+pip install psycopg2-binary
+```
