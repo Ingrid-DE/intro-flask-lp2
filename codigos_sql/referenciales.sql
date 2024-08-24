@@ -1,5 +1,5 @@
-CREAR TABLA
+CREATE TABLE
 	ciudades(
-		id serial  CLAVE PRIMARIA
-		, descripción varchar ( 60 ) ÚNICO
+		id serial PRIMARY KEY
+		, descripcion varchar(60) UNIQUE
 	);

@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
 </head>
 <body>
+
     <div class="container mt-4">
         <h3>Registro de Mascota</h3>
 
         <div class="row">
             <!-- columna de la mascota -->
             <div class="col col-md-6">
+
                 <!-- Formulario -->
                 <form action="{{ url_for('guardarMascota') }}" method="post">
                     <div class="card">
@@ -34,30 +36,30 @@
                                 <label for="txtEdad">Edad:</label>
                                 <input type="number" class="form-control" placeholder="Edad de su mascota" name="txtEdad" id="txtEdad">
                             </div>
-                            <div class="card-footer">
-                                <button type="submit" class="btn btn-primary" name="btnGuardar" id="btnGuardar">Guardar</button>
-                            </div>
                         </div>
-                    </form>
-                    <!--  -->
-
-                </div>
-                <!--  -->
-            </div>
-            
-            <div class="row mt-4 d-none" id="rowAlerta">
-                <div class="col col-md-12">
-                    <div class="alert alert-success">
-                        <strong>Registro Exitoso!</strong>
-                         <div class="row" id="mostrarAlerta"></div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" name="btnGuardar" id="btnGuardar">Guardar</button>
+                        </div>
                     </div>
-                 </div>
-             </div>
-         </div>
+                </form>
+                <!--  -->
+
+            </div>
+            <!--  -->
+        </div>
+
+        <div class="row mt-4 d-none" id="rowAlerta">
+            <div class="col col-md-12">
+                <div class="alert alert-success">
+                    <strong>Registro Exitoso!</strong>
+                    <div class="row" id="mostrarAlerta"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/popper.min.js' ) }}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
-    
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
