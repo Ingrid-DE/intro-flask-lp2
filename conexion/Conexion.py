@@ -4,8 +4,9 @@ class Conexion:
 
     """Metodo constructor
     """
-    def _init_(self):
-        self.con = psycopg2.connect("dbname=veterinaria-db user=postgres host=localhost password=admin")
+    def __init__(self):
+        self.con = psycopg2.connect(dbname="veterinaria-db", user="postgres", password="19082003", host="localhost", port=5432)
+        #self.con = psycopg2.connect("dbname=veterinaria-db user=postgres host=127.0.0.1 port=5433 password=admin")
 
     """getConexion
 
