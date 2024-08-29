@@ -38,7 +38,7 @@ def guardarCiudad():
         flash('Debe escribir algo en la descripcion', 'warning')
 
         # redireccionar a la vista ciudades
-        return redirect(url_for('ciudades'))
+        return redirect(url_for('ciudades'))  
 
     ciudaddao = CiudadDao()
     ciudaddao.guardarCiudad(ciudad.upper())
